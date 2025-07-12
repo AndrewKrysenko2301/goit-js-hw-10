@@ -8,16 +8,27 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
-
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <header class="site-header">
+      <div class="container">
+        <a href="/" class="logo-link">
+          <svg
+            class="logo-icon"
+            width="40"
+            height="40"
+            aria-label="Logo"
+            role="img"
+          >
+            <use href="img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="1-timer.html">Timer</a></li>
+            <li><a href="2-snackbar.html">Snackbar</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main></main>
   </body>
 </html>
