@@ -3,10 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://andrewkrysenko2301.github.io/goit-js-hw-10",
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/goit-js-hw-10/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "glob": "^11.0.0",
