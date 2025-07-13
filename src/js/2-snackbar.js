@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const form = document.querySelector('.form');
 
 form.addEventListener('submit', event => {
@@ -22,6 +25,63 @@ form.addEventListener('submit', event => {
       });
     });
 });
+window.showCaution = function () {
+  iziToast.warning({
+    title: 'Caution',
+    message: '⚠️ You forgot important data',
+    position: 'topRight',
+  });
+};
+
+window.showInfo = function () {
+  iziToast.info({
+    title: 'Info',
+    message: '👋 Hello, Welcome!',
+    position: 'topRight',
+  });
+};
+
+window.showImage = function () {
+  iziToast.show({
+    title: 'Hello!',
+    message: 'Do you like it?',
+    image: '/src/img/Mask group.jpg',
+    position: 'topRight',
+  });
+};
+
+window.showFull = function () {
+  iziToast.show({
+    title: 'Confirmation',
+    message: '<strong>Hey</strong> What would you like to add?',
+    image: '/src/img/Mask group.jpg',
+    position: 'topRight',
+    buttons: [
+      [
+        '<button>Photo</button>',
+        (instance, toast) => {
+          instance.hide({ transitionOut: 'fadeOut' }, toast);
+          console.log('User clicked Photo');
+        },
+        true,
+      ],
+      [
+        '<button>Video</button>',
+        (instance, toast) => {
+          instance.hide({ transitionOut: 'fadeOut' }, toast);
+          console.log('User clicked Video');
+        },
+      ],
+      [
+        '<button>Text</button>',
+        (instance, toast) => {
+          instance.hide({ transitionOut: 'fadeOut' }, toast);
+          console.log('User clicked Text');
+        },
+      ],
+    ],
+  });
+};
 
 function createPromise(delay, state) {
   return new Promise((resolve, reject) => {

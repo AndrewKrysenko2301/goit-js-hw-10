@@ -2,33 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <main>
       <div class="container">
-        <a href="/" class="logo-link">
-          <svg
-            class="logo-icon"
-            width="40"
-            height="40"
-            aria-label="Logo"
-            role="img"
-          >
-            <use href="img/sprite.svg#logo"></use>
-          </svg>
-        </a>
-        <nav class="site-nav">
-          <ul>
-            <li><a href="1-timer.html">Timer</a></li>
-            <li><a href="2-snackbar.html">Snackbar</a></li>
-          </ul>
-        </nav>
+        <section class="project-grid">
+          <a href="./1-timer.html" class="project-card">
+            <img src="./img/timer-preview.png" alt="Timer Preview" />
+            <span>Timer</span>
+          </a>
+          <a href="./2-snackbar.html" class="project-card">
+            <img src="./img/snackbar-preview.png" alt="Snackbar Preview" />
+            <span>Snackbar</span>
+          </a>
+        </section>
       </div>
-    </header>
-    <main></main>
+    </main>
   </body>
 </html>

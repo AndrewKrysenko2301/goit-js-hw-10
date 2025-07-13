@@ -24,8 +24,8 @@ const options = {
     const selected = selectedDates[0];
 
     if (selected <= new Date()) {
-      iziToast.warning({
-        title: 'Warning',
+      iziToast.error({
+        title: 'Error',
         message: 'Please choose a date in the future',
         position: 'topRight',
       });
@@ -40,6 +40,8 @@ const options = {
 flatpickr(dateInput, options);
 
 startBtn.addEventListener('click', () => {
+  if (timerId) return;
+
   startBtn.disabled = true;
   dateInput.disabled = true;
 
@@ -49,8 +51,12 @@ startBtn.addEventListener('click', () => {
 
     if (diff <= 0) {
       clearInterval(timerId);
+      timerId = null;
       updateTimerDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
       dateInput.disabled = false;
+      startBtn.disabled = false;
+      dateInput.focus();
       return;
     }
 
